@@ -17,8 +17,9 @@ var commentRoutes       = require("./routes/comments"),
     indexRoutes         = require("./routes/index");
 // seedDB();
 
-//mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect("mongodb+srv://penny:19960607xwjXWJ@cluster0-awssg.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
+var url = process.env.DATABASEURL || mongodb://localhost:27017/yelp_camp
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect("mongodb+srv://penny:19960607xwjXWJ@cluster0-awssg.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -50,6 +51,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT|| 3000, process.env.IP, function(){
 	console.log('server listening to port 3000');
 });
