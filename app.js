@@ -17,7 +17,9 @@ var commentRoutes       = require("./routes/comments"),
     indexRoutes         = require("./routes/index");
 // seedDB();
 
-var url = process.env.DATABASEURL || mongodb://localhost:27017/yelp_camp
+require('dotenv').config()
+
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp"
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
 //mongoose.connect("mongodb+srv://penny:19960607xwjXWJ@cluster0-awssg.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
 
