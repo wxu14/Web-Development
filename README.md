@@ -1,9 +1,7 @@
 # YelpCamp
----
 >A Node.js web application project from [Udemy course by Colt Steele](https://www.udemy.com/course/the-web-developer-bootcamp/)
 
 ## Functions
----
 - User authentification
 	- User login with username and password
 	- Admin sign-up with admin code
@@ -18,7 +16,6 @@
 	
 
 ## Built with
----
 ### Front-end
 - HTML
 - ejs
